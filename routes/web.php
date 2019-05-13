@@ -14,3 +14,17 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+//$app->get('/', [
+//    'as' => 'open',
+//    'open' => 'App\Http\Controllers\OpenController@open'
+//]);
+//$router->group(['prefix' => 'open/'], function() use ($router) {
+//    $router->get('/','OpenController@open'); //get all the routes
+//
+//});
+$router->post('open', 'OpenController@open');//非对称
+$router->post('twoadd', 'OpenController@twoadd');//对称
+//签名
+$router->post('sign', 'OpenController@sign');
+$router->post('login', 'UserController@login');//非对称

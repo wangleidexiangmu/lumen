@@ -23,8 +23,15 @@ $router->get('/', function () use ($router) {
 //    $router->get('/','OpenController@open'); //get all the routes
 //
 //});
-$router->post('open', 'OpenController@open');//非对称
+$router->post('add', 'OpenController@add');//非对称
+$router->options('add',function () use ($router) {
+    return '';
+});
 $router->post('twoadd', 'OpenController@twoadd');//对称
 //签名
 $router->post('sign', 'OpenController@sign');
 $router->post('login', 'UserController@login');//非对称
+$router->options('login',function () use ($router) {
+    return '';
+});//非对称
+$router->get('aj', 'TestController@aj');//ajax

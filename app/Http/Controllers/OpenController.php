@@ -6,18 +6,19 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 use App\Open;
 use Laravel\Lumen\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Model\UserModel;
 class OpenController extends BaseController
 {
-<<<<<<< HEAD
-    public function open(Request $request)
-=======
+
+
+
     public function add(Request $request)
->>>>>>> 43f2cce131a9beb0a459fd3e7f7276902acf9e34
     {
-        $pass1 = $request->input('pass1');
-        $pass2 = $request->input('pass2');
-        $email = $request->input('email');
-        var_dump($email);exit;
+        $email=$_POST['email'];
+        $pass1=$_POST['pass1'];
+        $pass2=$_POST['pass2'];
+        $name=$_POST['name'];
+       // var_dump($email);exit;
         $e = UserModel::where(['email' => $email])->first();
         if ($e) {
             $response = [
@@ -47,7 +48,7 @@ class OpenController extends BaseController
         $sl = openssl_private_encrypt($str, $finaltext, $k, OPENSSL_PKCS1_PADDING);
         //echo "String crypted: $finaltext";exit;
         $pos_st = base64_encode($finaltext);
-        $url = 'http://api.1809a.com/open';
+        $url = 'http://passport.wangleiseven.top/reg';
 
         //创建一个新curl
         $ch = curl_init();
@@ -59,7 +60,7 @@ class OpenController extends BaseController
         ]);
         $res = curl_exec($ch);
         $code = curl_errno($ch);
-        var_dump($code);
+       // var_dump($code);
         curl_close($ch);
 
 

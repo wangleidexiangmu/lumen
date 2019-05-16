@@ -22,20 +22,14 @@ $router->get('/', function () use ($router) {
 //$router->group(['prefix' => 'open/'], function() use ($router) {
 //    $router->get('/','OpenController@open'); //get all the routes
 //
-//});
 $router->post('add', 'OpenController@add');//非对称
-$router->options('add',function () use ($router) {
-    return '';
-});
+
 $router->post('twoadd', 'OpenController@twoadd');//对称
 //签名
 $router->post('sign', 'OpenController@sign');
 $router->post('login', 'UserController@login');//非对称
-<<<<<<< HEAD
-$router->post('add', 'TestController@add');//登录
-=======
 $router->options('login',function () use ($router) {
     return '';
 });//非对称
 $router->get('aj', 'TestController@aj');//ajax
->>>>>>> 43f2cce131a9beb0a459fd3e7f7276902acf9e34
+

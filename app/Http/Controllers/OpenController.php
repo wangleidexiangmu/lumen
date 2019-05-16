@@ -18,7 +18,7 @@ class OpenController extends BaseController
         $pass1=$_POST['pass1'];
         $pass2=$_POST['pass2'];
         $name=$_POST['name'];
-       // var_dump($email);exit;
+        // var_dump($email);exit;
         $e = UserModel::where(['email' => $email])->first();
         if ($e) {
             $response = [
@@ -60,7 +60,7 @@ class OpenController extends BaseController
         ]);
         $res = curl_exec($ch);
         $code = curl_errno($ch);
-       // var_dump($code);
+        // var_dump($code);
         curl_close($ch);
 
 

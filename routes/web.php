@@ -28,3 +28,4 @@ $router->post('twoadd', 'OpenController@twoadd');//对称
 //签名
 $router->post('sign', 'OpenController@sign');
 $router->post('login', 'UserController@login');//非对称
+$router->post('add', 'TestController@add');//登录

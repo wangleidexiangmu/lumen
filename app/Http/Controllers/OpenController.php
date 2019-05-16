@@ -8,7 +8,7 @@ use Laravel\Lumen\Http\Request;
 use Illuminate\Support\Facades\DB;
 class OpenController extends BaseController
 {
-    public function open()
+    public function open(Request $request)
     {
         $res= file_get_contents("php://input");
         $data=base64_decode($res);
